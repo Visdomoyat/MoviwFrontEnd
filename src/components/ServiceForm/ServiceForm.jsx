@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function ServiceFrom(props) {
+function ServiceForm(props) {
     const [formData, setFormData] = useState({
         services: 'Frontend',
         description: '',
@@ -14,7 +14,7 @@ function ServiceFrom(props) {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log('formData', formData)
+        props.handleAddService(formData)
     };
     return (
         <main>
@@ -37,21 +37,23 @@ function ServiceFrom(props) {
                 </select>
 
                 <label htmlFor="description-input">Description</label>
-                <textArea
+                <textarea
                     required
                     type='text'
                     name='description'
                     id='description-input'
                     value={formData.description}
+                    onChange={handleChange}
                 />
 
                 <label htmlFor="mobile-input">Phone Number</label>
                 <input
                     required
-                    type="number"
+                    type="tel"
                     name="mobile"
                     id='mobile-input'
                     value={formData.mobile}
+                    onChange={handleChange}
                 />
 
                 <label htmlFor="Email-input">Email</label>
@@ -61,12 +63,13 @@ function ServiceFrom(props) {
                     name="Email"
                     id='Email-input'
                     value={formData.Email}
+                    onChange={handleChange}
                 />
 
-                <button type="submit"></button>
+                <button type="submit">Request service</button>
             </form>
         </main>
     );
 };
 
-export default ServiceFrom
+export default ServiceForm
