@@ -1,11 +1,15 @@
 import { useParams } from "react-router"
 import {useState, useEffect} from 'react';
 import * as serveService from '../../services/serveService';
+import CommentForm from "../CommentForm/CommentForm";
 
 function ServiceDetails() {
     const {serviceId} = useParams();
     const [service, setService] = useState(null);
 
+    const handleAddComment = async (commentFormData) => {
+      console.log('commentFormData', commentFormData)
+    }
     useEffect(() => {
       const fetchService = async () => {
         const serviceData = await serveService.show(serviceId)
@@ -31,7 +35,11 @@ function ServiceDetails() {
       </section>
       <section>
         <h3>Comments</h3>
+
+        <CommentForm />
+
         {!service.comments.length && <p>There are no comments.</p>}
+
         {service.comments.map((comment) => (
           <article key={comment._id}>
             <header>
