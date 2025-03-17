@@ -21,7 +21,7 @@ function ServiceList({ services = [] }) {
           </Link>
         ))
       ) : (
-        <p>Loading Services ...</p>
+        <p><Link to='/services/new'>New service</Link></p>
       )}
 
     </main>
