@@ -9,6 +9,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ServiceList from './components/ServiceList/ServiceLists';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServiceForm from './components/ServiceForm/ServiceForm';
+import ListServices from './components/ListServices/ListServices';
 
 import { UserContext} from './contexts/UserContext';
 
@@ -31,28 +32,28 @@ const App = () => {
     }
     
   }
-
-  
   
   useEffect(() => {
-    const fetchAllServices = async () => {
+    const fetchUserServices = async () => {
       try{
-        const servicesData = await serveService.index();
-      
-        // console.log("Fetched services:", servicesData)
-        setServices(servicesData)
+        const userServices = await serveService.index()
+        
+        console.log("Fetched User-specific Services:", userServices)
+    
+        setServices(userServices)
       }catch(err){
         console.error("Error fetching services:", err)
       }
       
     };
-    if(user) fetchAllServices()
+    if(user) fetchUserServices();
   }, [user])
   return (
     <>
       <NavBar/>
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+        <Route path='/service' element={<ListServices />}  />
         {user ? (
           <>
           <Route path='/services' element={<ServiceList services={services} />} />

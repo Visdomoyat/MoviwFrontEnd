@@ -1,3 +1,5 @@
+
+
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
 
 const signUp = async (formData) => {
@@ -10,8 +12,8 @@ const signUp = async (formData) => {
 
     const data = await res.json();
 
-    if (data.err) {
-      throw new Error(data.err);
+    if (data.message) {
+      throw new Error(data.message);
     }
 
     if (data.token) {
@@ -20,6 +22,7 @@ const signUp = async (formData) => {
     }
 
     throw new Error('Invalid response from server');
+    
   } catch (err) {
     console.log(err);
     throw new Error(err);
