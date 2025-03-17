@@ -32,8 +32,8 @@ const NavBar = () => {
         <li><Link to='/service' onClick={() => setIsOpen(false)}>Services</Link></li>
        {user ? (
         <>
-          <li><Link to='/services' onClick={() => setIsOpen(false)}>Requested Services</Link></li>
-          <li><Link to ='/services/new' onClick={() => setIsOpen(false)}>Request Service</Link></li>
+          <li><Link to='/services' onClick={() => setIsOpen(false)}>My Service(s)</Link></li>
+          <li><Link to ='/services/new' onClick={() => setIsOpen(false)}>New Service</Link></li>
           <li><Link to='/' onClick={handleSignOut}>Sign Out</Link></li>
         </>
       ) : (
