@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import style from './ServiceForm.module.css'
 
 function ServiceForm(props) {
     const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ function ServiceForm(props) {
         props.handleAddService(formData)
     };
     return (
-        <main>
+        <main className={style.container}>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="services-input">Services</label>
                 <select

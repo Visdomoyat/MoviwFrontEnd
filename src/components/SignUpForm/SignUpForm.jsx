@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router';
 import { signUp } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
+import SignUpIcon from '../../assets/images/signUp.webp';
+import styles from './SignUpForm.module.css';
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -26,8 +28,8 @@ const SignUpForm = () => {
     evt.preventDefault();
     try {
       const newUser = await signUp(formData);
-      setUser(newUser);
-      navigate('/');
+      console.log("User signed up successfully:", newUser)
+      navigate('/sign-in');
     } catch (err) {
       setMessage(err.message);
     }
@@ -38,10 +40,14 @@ const SignUpForm = () => {
   };
 
   return (
-    <main>
+    <main className={styles.container}>
+      <section>
+        <img src={SignUpIcon} alt="A dove sitting on a sign" />
+      </section>
+      <section>
+      <form onSubmit={handleSubmit}>
       <h1>Sign Up</h1>
       <p>{message}</p>
-      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor='username'>Username:</label>
           <input
@@ -80,6 +86,7 @@ const SignUpForm = () => {
           <button onClick={() => navigate('/')}>Cancel</button>
         </div>
       </form>
+      </section>
     </main>
   );
 };

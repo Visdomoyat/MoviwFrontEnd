@@ -1,5 +1,5 @@
 import { useState } from "react";   
-
+import Style from './CommentForm.module.css'
 
 function CommentForm(props) {
     const [formData, setFormData] = useState({text: ''});
@@ -13,7 +13,9 @@ function CommentForm(props) {
         setFormData({text: ''});
     };
 
+    
   return (
+    <main className={Style.container}>
     <form onSubmit={handleSubmit}>
         <label htmlFor="text-input">Your comment:</label>
         <textarea 
@@ -26,6 +28,8 @@ function CommentForm(props) {
         />
         <button type="submit">Comment</button>
     </form>
+    </main>
+    
   )
 }
 
