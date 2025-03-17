@@ -17,7 +17,7 @@ function CommentForm(props) {
   return (
     <main className={Style.container}>
     <form onSubmit={handleSubmit}>
-        <label htmlFor="text-input">Your comment:</label>
+        <label htmlFor="text-input">More Description:</label>
         <textarea 
         required
         type='text'
@@ -26,7 +26,7 @@ function CommentForm(props) {
         value={formData.text}
         onChange={handleChange}
         />
-        <button type="submit">Comment</button>
+        <button type="submit">Add desciption</button>
     </form>
     </main>
     

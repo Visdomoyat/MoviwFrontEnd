@@ -9,14 +9,14 @@
     flex-direction: column;
   }
   
-  .container input, textarea, select, button { 
+  .container input, textarea, select { 
     width: 100%;
     padding: 14px;
     font-size: 14px;
     resize: vertical;
     border-radius: 5px;
     margin: 7px 0px 14px 0px;
-    border: 1px solid var(--border);
+    border: 1px solid rgb(217, 230, 230);
   }
   
   .container textarea {
@@ -29,10 +29,12 @@
   }
   
   .container button {
-    color: white;
+    color: black;
     font-weight: 600;
+    font-size: 20px;
     margin: 21px 0px 0px 0px;
-    background: var(--primary);
+    background: white;
+    border: none
   }
   
   input:focus, select:focus, textarea:focus {

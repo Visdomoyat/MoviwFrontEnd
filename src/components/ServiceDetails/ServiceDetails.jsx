@@ -3,6 +3,7 @@ import { useParams } from "react-router"
 import {useState, useEffect} from 'react';
 
 import CommentForm from "../CommentForm/CommentForm";
+import styles from './ServiceDetails.module.css'
 
 function ServiceDetails() {
     const {serviceId} = useParams();
@@ -38,20 +39,20 @@ function ServiceDetails() {
     if (!service) return <p>loading ...</p>
   return (
    
-    <main>
+    <main className={styles.main}>
       <section>
         <header>
          
-        <h2>{service.services} service</h2>
-          <p>
-            {`${service.author.username} posted on 
+        <h2>{service.services} service <p>{new Date(service.createdAt).toLocaleDateString()}</p></h2>
+          {/* <p>
+            {`${service.author.username} posted on
             ${new Date(service.createdAt).toLocaleDateString()}`}
-          </p>
+          </p> */}
         </header>
         <p>{service.description}</p>
       </section>
       <section>
-        <h3>Comments</h3>
+      
 
         <CommentForm  handleAddComment={handleAddComment}/>
 

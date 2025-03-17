@@ -16,10 +16,16 @@
   }
   
   .container button {
-    color: white;
+    color: black;
     font-weight: 600;
     margin: 21px 0px 0px 0px;
-    background: var(--primary);
+    border: none;
+    background: white
+  }
+
+  .container button:hover {
+    background: cyan;
+    cursor: pointer;
   }
   
   input:focus, select:focus, textarea:focus {
