@@ -8,7 +8,8 @@ function CommentForm(props) {
     };
 
     const handleSubmit = (evt) => {
-        evt.preventDefault()
+        evt.preventDefault();
+        props.handleAddComment(formData);
         setFormData({text: ''});
     };
 

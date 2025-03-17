@@ -1,23 +1,40 @@
+import * as serveService from '../../services/serveService';
 import { useParams } from "react-router"
 import {useState, useEffect} from 'react';
-import * as serveService from '../../services/serveService';
+
 import CommentForm from "../CommentForm/CommentForm";
 
 function ServiceDetails() {
     const {serviceId} = useParams();
+    
     const [service, setService] = useState(null);
 
     const handleAddComment = async (commentFormData) => {
-      console.log('commentFormData', commentFormData)
+      const newComment = await serveService.createComment(serviceId, commentFormData);
+      if(!service) {
+        console.error("Service is null, cannot add comment!")
+        return;
+      }
+      setService({...service, comments:[...service.comments, newComment]})
     }
     useEffect(() => {
       const fetchService = async () => {
-        const serviceData = await serveService.show(serviceId)
-        setService(serviceData)
-      }
+        try{
+          const serviceData = await serveService.show(serviceId)
+          console.log("Fetched service data:", serviceData)
+          
+          if(!serviceData || !serviceData.comments) {
+            console.error("Service data is invalid or comments are missing!")
+          }
+          setService(serviceData)
+        }catch(err){
+          console.error("Error fetching service:", err)
+        }
+        
+      };
       fetchService();
     }, [serviceId]);
-    console.log('service state', service)
+    console.log("Service comments:", service?.comments)
     if (!service) return <p>loading ...</p>
   return (
    
@@ -36,19 +53,24 @@ function ServiceDetails() {
       <section>
         <h3>Comments</h3>
 
-        <CommentForm />
+        <CommentForm  handleAddComment={handleAddComment}/>
 
         {!service.comments.length && <p>There are no comments.</p>}
 
-        {service.comments.map((comment) => (
-          <article key={comment._id}>
+        {service?.comments?.map((comment, index) => (
+          
+          <article key={comment?._id || index}>
+            
             <header>
               <p>
-                {`${comment.author.username} posted on 
-                ${new Date(comment.createdAt).toLocaleDateString()}`}
+
+                {comment?.author?.username
+                ?`${comment.author.username} posted on 
+                ${new Date(comment.createdAt).toLocaleDateString()}`
+                : "Unknown author"}
               </p>
             </header>
-            <p>{comment.text}</p>
+            <p>{comment?.text || "No comment text available"}</p>
           </article>
         ))}
       </section>

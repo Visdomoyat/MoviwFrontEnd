@@ -16,9 +16,10 @@ const show = async (serviceId) => {
         const res = await fetch(`${BASE_URL}/${serviceId}`, {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         });
-        return res.json()
+        if(!res.ok) throw new Error(`Failed to fetch service: ${res.status}`)
+        return await res.json()
     }catch (err) {
-        console.log(err)
+        console.log("Error fetching service details",err)
     }
 }
 
@@ -37,4 +38,28 @@ const create = async (serviceFormData) => {
         console.log(err)
     }
 }
-export {index, show, create}
+
+const createComment = async (serviceId, commentFormData) => {
+    try{
+        const res = await fetch(`${BASE_URL}/${serviceId}/comments`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentFormData)
+        });
+        if(!res.ok) {
+            throw new Error(`HTTP error! Status : ${res.status}`)
+        }
+
+        const data = await res.json();
+        console.log("API Response (New Comment):", data)
+       return data
+    } catch (err) {
+        console.error('error Creating comment:', err)
+        
+
+    }
+}
+export {index, show, create, createComment}

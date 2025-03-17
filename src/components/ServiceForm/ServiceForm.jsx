@@ -31,7 +31,7 @@ function ServiceForm(props) {
                     <option value="Backend">Backend</option>
                     <option value="Search Engine Optimization(SEO)">Search Engine Optimization(SEO)</option>
                     <option value="Full stack">Full stack</option>
-                    <option value="API integration $ development">API integration $ development</option>
+                    <option value="API integration & development">API integration & development</option>
                     <option value="E-commerce solutions">E-commerce solutions</option>
                     <option value="Software Localization">Software Localization</option>
                 </select>
