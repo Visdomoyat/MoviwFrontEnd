@@ -10,6 +10,8 @@ import ServiceList from './components/ServiceList/ServiceLists';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServiceForm from './components/ServiceForm/ServiceForm';
 import ListServices from './components/ListServices/ListServices';
+import About from './components/About/About'
+import Footer from './components/Footer/Footer'
 
 import { UserContext} from './contexts/UserContext';
 
@@ -54,10 +56,12 @@ const App = () => {
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         <Route path='/service' element={<ListServices />}  />
+        <Route path='/about' element={<About />}  />
         {user ? (
           <>
           <Route path='/services' element={<ServiceList services={services} />} />
           <Route path='/services/:serviceId' element={<ServiceDetails services={services}/>} />
+          
           <Route path='/services/new' element={<ServiceForm handleAddService = {handleAddService} />} />
           
           </>
@@ -67,8 +71,11 @@ const App = () => {
           <Route path='/sign-in' element={<SignInForm />} />                                  
           </>
         )}
+       
         
       </Routes>
+      
+      <Footer />
     </>
   );
 };
