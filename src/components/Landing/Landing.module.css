@@ -1,0 +1,129 @@
+.main {
+    /* max-width: 1200px; */
+    background: #fff;
+    margin: auto;
+    overflow: hidden;
+    text-align: center
+     
+  }
+
+  .landing {
+    width: 100%;  /* Full viewport width */
+    height: auto; /* Full viewport height */
+    margin-top: 20px;
+    padding: 0;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+    display: flex; /* Centers content */
+    justify-content: center;
+    align-items: center;
+    background: url('../../assets/images/LandingBanner.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the full section */
+}
+
+.landing img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+  .zombie {
+    margin-top: 200px ;
+    text-align: center;
+    border: 1px black solid
+  }
+
+  .zombie a{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 50px;
+    padding: 30px;
+    
+  }
+
+  .zombie img p{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+  }
+ 
+  .container {
+    max-width: 800px;
+  margin: 10px auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+  .container h1 {
+    font-size: 2.5rem;
+    color: #493423;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+ ul {
+    list-style-type: none;
+  padding: 0;
+}
+
+.container ul li {
+    background: #493423;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #eff1ed;
+    transition: all 0.3s ease;
+}
+
+.container li:hover {
+    background: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main {
+      max-width: 90%;
+      height: auto;
+      padding: 15px;
+    }
+    .landing img {
+      max-width: 90%;
+    
+      display: block;
+     
+    }
+    h3 {
+      font-size: 1.2rem;
+      text-align: center
+    }
+  
+    p {
+      font-size: 0.95rem;
+    }
+  
+    button {
+      width: 100%;
+      padding: 10px;
+    }
+    .animated-box {
+        font-size: 16px;
+        width: 90%;
+      }
+  }
