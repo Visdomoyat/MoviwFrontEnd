@@ -29,7 +29,8 @@ const NavBar = () => {
       </div>
       <ul className={`${styles.navLinks} ${isOpen ? styles.open : ''}`}>
         <li><Link to='/' onClick={() => setIsOpen(false)}>Home</Link></li>
-        <li><Link to='/service' onClick={() => setIsOpen(false)}>Services</Link></li>
+        
+        <li><Link to='/about' onClick={() => setIsOpen(false)}>About</Link></li>
        {user ? (
         <>
           <li><Link to='/services' onClick={() => setIsOpen(false)}>My Service(s)</Link></li>
@@ -39,7 +40,7 @@ const NavBar = () => {
       ) : (
         <>
           <li><Link to='/sign-in' onClick={() => setIsOpen(false)}>Sign In</Link></li>
-          <li><Link to='/sign-up' onClick={() => setIsOpen(false)}>Sign Up</Link></li>
+          {/* <li><Link to='/sign-up' onClick={() => setIsOpen(false)}>Sign Up</Link></li> */}
         </>
       )}
       </ul>

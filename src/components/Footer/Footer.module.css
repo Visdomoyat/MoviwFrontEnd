@@ -1,0 +1,53 @@
+.footer {
+    width: 100%;
+    background-color: #493423; /* Dark background */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: relative; /* Can be fixed or absolute */
+    bottom: 0;
+}
+
+.footer table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px;
+    border: 1px solid black;
+}
+
+.footer th, td {
+    padding: 10px;
+  
+  
+}
+
+.footer th {
+    font-size: 20px;
+}
+
+.footer a p{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer p{
+    font-size: 15px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    footer table {
+        display: block;
+        text-align: center;
+    }
+
+    footer th, 
+    footer td {
+        display: block;
+        width: 100%;
+    }
+}
