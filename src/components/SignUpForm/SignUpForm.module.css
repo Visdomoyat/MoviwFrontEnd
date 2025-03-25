@@ -9,13 +9,25 @@
   .container p {
     margin: 0;
     padding: 0px 0 10px;
+    
+  }
+  .container p Link {
+    color: blue;
   }
   
-  .container img {
-    width: 65%;
-    max-width: 500px;
+  
+  
+   
+  .container  img {
+    width: 900px;
+    height: 450px;
+    max-width: 1200px;
+    object-fit: contain;
   }
   
+  .container h1 {
+    color: #493423;
+  }
   .container section {
     width: 50%;
     height: 100%;
@@ -59,15 +71,19 @@
   .container label {
     font-weight: 600;
     margin: 7px 0px 14px 0px;
+    color: #493423
   }
   
   .container button {
     color: white;
     font-weight: 600;
-    background: #00a0df;
+    background: #493423;
     margin: 21px 0px 0px 0px;
   }
   
+  .container button:hover {
+    background: black;
+  }
   .container a {
     border: none;
     font-size: 14px;
@@ -75,7 +91,7 @@
     font-weight: 500;
     margin-top: 14px;
     text-align: center;
-    color: rgb(200, 200, 200);
+    color: rgb(83, 92, 173);
   }
   
   input:focus {

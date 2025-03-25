@@ -2,9 +2,9 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router';
 
 import { signIn } from '../../services/authService';
-
+import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
-import LoginIcon from '../../assets/images/LoginIcon.webp'
+import LoginIcon from '../../assets/images/SignInIcon.png'
 import styles from './SignInForm.module.css'
 
 const SignInForm = () => {
@@ -66,8 +66,14 @@ const SignInForm = () => {
           />
         </div>
         <div>
+        <p>
+          <Link to='/sign-up'>Create an account</Link>
+          </p>
+        </div>
+       
+        <div>
           <button>Sign In</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          
         </div>
       </form>
       </section>

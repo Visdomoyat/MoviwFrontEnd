@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { signUp } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
-import SignUpIcon from '../../assets/images/signUp.webp';
+import SignUpIcon from '../../assets/images/SignUpIcon.png';
 import styles from './SignUpForm.module.css';
 
 const SignUpForm = () => {
