@@ -1,0 +1,52 @@
+.main {
+    width: 100%;
+    margin: auto
+}
+
+.main h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.mission {
+    margin: 10px;
+    border-radius: 12px;
+    padding: 10px;
+    height: 200px;
+    background-color:#493423;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+.mission h2 {
+    color: #eff1ef;
+    text-align: center
+}
+.mission p {
+    font-size: 25px;
+    margin-top: 40px;
+    color: #eff1ef
+}
+
+.about{
+    display: block;
+    padding: 10px;
+    margin: 12px;
+    float: center;
+    border-radius: 12px;
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+    background: #eff1ef;
+   
+}
+.about  p {
+    color: #493423;
+    text-align: left
+       
+}
+.about h2 {
+    color: #493423
+}
+
+@media (max-width: 768px) {
+    .mission {
+        height: auto; 
+    }
+}

@@ -11,28 +11,37 @@
 .footer table {
     width: 100%;
     max-width: 1200px;
-    margin: 50px;
-    border: 1px solid black;
+    margin: 0 auto;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    border-collapse: collapse;
 }
 
 .footer th, td {
-    padding: 10px;
+    padding: 5px;
+   
   
   
 }
 
 .footer th {
     font-size: 20px;
+    font-weight: bold;
+    color: #eff1ef;
+    
+}
+.footer td{
+    color: grey;
 }
 
 .footer a p{
-    color: white;
+    color: grey;
     text-decoration: none;
-    text-align: center;
 }
 
-.footer p{
+.footer p {
     font-size: 15px;
+    margin: 5px 0;
+    color: black
 }
 
 .footer a:hover {
@@ -40,14 +49,30 @@
 }
 
 @media (max-width: 768px) {
-    footer table {
-        display: block;
+    .footer table {
+        
         text-align: center;
+        margin: 0 auto;
     }
 
-    footer th, 
-    footer td {
-        display: block;
-        width: 100%;
+    .footer th, 
+    .footer td {
+        text-align: center;
+        padding: 10px;
+        
+    }
+
+    .footer th {
+        font-size: 18px;
+    }
+    .footer tr {
+        display: table-row;
+    }
+    .footer td {
+        display: table-cell;
+    }
+
+    .footer p {
+        font-size: 14px;
     }
 }

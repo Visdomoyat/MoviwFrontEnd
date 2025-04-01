@@ -1,12 +1,17 @@
 import { useEffect, useState, useContext } from 'react';
 
 import { UserContext } from '../../contexts/UserContext';
+import styles from './Dashboard.module.css'
 
 import * as userService from '../../services/userService';
 
+
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [ users, setUsers ] = useState([]);
+ 
+  const [users, setUsers] = useState([])
+
+
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -21,16 +26,21 @@ const Dashboard = () => {
   }, [user]);
 
   return (
-    <main>
+    <main className={styles.container}>
+      <div className={styles.uploadContainer}>
+         
       <h1>Welcome, {user.username}</h1>
-      <p>
-        This is the dashboard page where you can see a list of all the users.
-      </p>
-      <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.username}</li>
-        ))}
-      </ul>
+      </div>
+      <div>
+        <h4>Project Status</h4>
+      </div>
+     <div>
+      <h4>Contracts</h4>
+     </div>
+     <div>
+      <h4>Billings and payment</h4>
+     </div>
+      
     </main>
   );
 };

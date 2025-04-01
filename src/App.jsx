@@ -10,8 +10,8 @@ import ServiceList from './components/ServiceList/ServiceLists';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ServiceForm from './components/ServiceForm/ServiceForm';
 import ListServices from './components/ListServices/ListServices';
-import About from './components/About/About'
-import Footer from './components/Footer/Footer'
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 import { UserContext} from './contexts/UserContext';
 
@@ -55,6 +55,7 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+        <Route path='/landing' element = {<Landing />} />
         <Route path='/service' element={<ListServices />}  />
         <Route path='/about' element={<About />}  />
         {user ? (

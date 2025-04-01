@@ -49,9 +49,13 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
+  .nav-open .container {
+    opacity: 0;
+    visibility: hidden;
+}
   
   /* Mobile responsiveness */
-  @media screen and (max-width: 768px) {
+  @media (max-width: 768px) {
     .hamburger {
       display: block;
     }
@@ -71,6 +75,13 @@
   
     .navLinks.open {
       display: flex;
+      opacity: 100;
+      
+    }
+   
+    .container {
+      width: 90%;
+      padding: 15px;
     }
   }
   

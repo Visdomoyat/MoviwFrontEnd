@@ -104,10 +104,9 @@
       padding: 15px;
     }
     .landing img {
-      max-width: 90%;
-    
+      width: 90%;
+      height: auto;
       display: block;
-     
     }
     h3 {
       font-size: 1.2rem;
