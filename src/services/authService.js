@@ -1,10 +1,10 @@
 
 
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/auth`;
+const BASE_URL = `${import.meta.env?.BACK_END_SERVER_URL || 'http://localhost:3000'}/auth`;
 
-const signUp = async (formData) => {
+const authenticate = async (endpoint, formData) => {
   try {
-    const res = await fetch(`${BASE_URL}/sign-up`, {
+    const res = await fetch(`${BASE_URL}/${endpoint}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -12,47 +12,35 @@ const signUp = async (formData) => {
 
     const data = await res.json();
 
-    if (data.message) {
-      throw new Error(data.message);
+    if (data.message || data.err) {
+      throw new Error(data.message || data.err);
     }
 
     if (data.token) {
-      localStorage.setItem('token', data.token);
-      return JSON.parse(atob(data.token.split('.')[1])).payload;
+      try{
+        const payload = JSON.parse(atob(data.token.split('.')[1])).payload;
+        localStorage.setItem('token', data.token);
+        return payload;
+      } catch(tokenErr){
+
+        throw new Error('Invalid token format');
+      }
     }
 
     throw new Error('Invalid response from server');
-    
   } catch (err) {
     console.log(err);
-    throw new Error(err);
+    throw err;
   }
 };
+// signUp function
+const signUp = async (formData) => {
+  return authenticate('sign-up', formData)
+}
+
 
 const signIn = async (formData) => {
-  try {
-    const res = await fetch(`${BASE_URL}/sign-in`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-
-    if (data.err) {
-      throw new Error(data.err);
-    }
-
-    if (data.token) {
-      localStorage.setItem('token', data.token);
-      return JSON.parse(atob(data.token.split('.')[1])).payload;
-    }
-
-    throw new Error('Invalid response from server');
-  } catch (err) {
-    console.log(err);
-    throw new Error(err);
-  }
+  return authenticate('sign-in', formData)
 };
 
 export {
