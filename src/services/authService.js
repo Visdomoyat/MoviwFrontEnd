@@ -1,6 +1,6 @@
 
 
-const BASE_URL = `${import.meta.env?.BACK_END_SERVER_URL || 'http://localhost:3000'}/auth`;
+const BASE_URL = `${import.meta.env?.VITE_BACK_END_SERVER_URL || 'http://localhost:3000'}/auth`;
 
 const authenticate = async (endpoint, formData) => {
   try {

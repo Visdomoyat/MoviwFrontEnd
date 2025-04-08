@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env?.BACK_END_SERVER_URL || 'http://localhost:3000'}/service`;
+const BASE_URL = `${import.meta.env?.VITE_BACK_END_SERVER_URL || 'http://localhost:3000'}/service`;
 
 const index = async () => {
     try {
