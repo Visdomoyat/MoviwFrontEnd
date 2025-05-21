@@ -85,16 +85,76 @@
     font-weight: 500;
     color: #eff1ed;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .container li:hover {
     background: black;
-  color: white;
-  cursor: pointer;
+    color: white;
+    cursor: pointer;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    z-index: 2;
+}
 
+.dropdownContent {
+    display: none;
+    position: relative;
+    background-color: #493423;
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 600px;
+    pointer-events: none;
+}
 
+.dropdownContent p {
+    color: #eff1ed;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dropdownContent ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.dropdownContent li {
+    background: none;
+    color: #eff1ed;
+    padding: 5px 0;
+    margin: 0;
+    text-align: left;
+    font-size: 0.9rem;
+    transition: none;
+}
+
+.show {
+    display: block;
+    pointer-events: auto;
+}
+
+/* Remove all hover effects for dropdown and its content */
+.dropdown:hover,
+.dropdownContent:hover,
+.dropdownContent li:hover {
+    background: #493423;
+    color: #eff1ed;
+}
+
+.dropdownContent.show {
+    display: block;
+}
 
   /* Responsive Design */
   @media (max-width: 768px) {
