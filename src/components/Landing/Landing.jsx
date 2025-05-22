@@ -26,15 +26,15 @@ const Landing = () => {
             <li className={styles.dropdown} onClick={() => toggleDropdown(0)}>
               Custom Website Development for Small Businesses
               <div className={`${styles.dropdownContent} ${openDropdown === 0 ? styles.show : ''}`}>
-                <p>We build simple, affordable, and efficient websites tailord to the needs of small businesses and educator.
+                <p>We build simple, affordable, and efficient websites tailored to the needs of small businesses and educators.
                    We use the latest technologies to ensure your website is fast, secure, and user-friendly. <br />
-                   examples:
+                   Examples:
                    <ul>
                     <li>Business landing page</li>
                     <li>E-commerce sites</li>
                     <li>Service-based websites</li>
                     <li>Portfolio websites</li>
-                    <li>informational/Educational websites</li>
+                    <li>Informational/Educational websites</li>
                     <li>And more!</li>
                     </ul>
                    </p>
@@ -49,25 +49,25 @@ const Landing = () => {
                      <li>Frontend: React.js, HTML/CSS, JavaScript</li>
                      <li>Backend: Node.js, Express, Python, Django</li>
                      <li>Database: MongoDB, PostgreSQL</li>
-                     <li>Hosting: Heroku, AWS, Netlify or client-preferred plartforms</li>
-                     <li>CMS(if needed): WordPress, Wix, etc.</li>
+                     <li>Hosting: Heroku, AWS, Netlify or client-preferred platforms</li>
+                     <li>CMS (if needed): WordPress, Wix, etc.</li>
                    </ul>
                    Turn your ideas into functional products ready for testing or pitching to investors
                 </p>
               </div>
             </li>
             <li className={styles.dropdown} onClick={() => toggleDropdown(2)}>
-              EdTech Plartform Development and Instructional Design
+              EdTech Platform Development and Instructional Design
               <div className={`${styles.dropdownContent} ${openDropdown === 2 ? styles.show : ''}`}>
-                <p>We design and develop interactive learning plartforms, tools, and content delivery systems for educators, trainers and students.
+                <p>We design and develop interactive learning platforms, tools, and content delivery systems for educators, trainers and students.
                    Our tech stack includes:
                    <ul>
                      <li>Frontend: React.js, HTML/CSS, JavaScript</li>
                      <li>Backend: Node.js, Express, Python, Django</li>
-                     <li>Learning Management System (LMS) integration: Canvas, Moodle, Blackboard, articulate 360 etc.</li>
+                     <li>Learning Management System (LMS) integration: Canvas, Moodle, Blackboard, Articulate 360 etc.</li>
                      <li>Audio-Visual educational resources: videos, podcasts, etc.</li>
                      <li>Interactive content: quizzes, simulations etc.</li>
-                     <li>Game-based learning tools: scratch, mindcraft, javascript etc.</li>
+                     <li>Game-based learning tools: Scratch, Minecraft, JavaScript etc.</li>
                      <li>Integration with third-party services: payment gateways, analytics, etc.</li>
                    </ul>
                    Create an engaging and effective learning experience for your audience
@@ -80,12 +80,12 @@ const Landing = () => {
                 <p>We provide comprehensive software localization services to help your product reach global markets.
                    We specialize in:
                    <ul>
-                     <li>Adapting user interfaces (UI), menus,and content for new markets</li>
-                     <li>Ensuring cultural relevance in images, date formmats, currencies, etc.</li>
+                     <li>Adapting user interfaces (UI), menus, and content for new markets</li>
+                     <li>Ensuring cultural relevance in images, date formats, currencies, etc.</li>
                      <li>Working with developers to ensure technical compatibility</li>
                      <li>Games</li>
                    </ul>
-                   Make your software feel native to users in diferent regions
+                   Make your software feel native to users in different regions
                 </p>
               </div>
             </li>
@@ -106,13 +106,13 @@ const Landing = () => {
             <li className={styles.dropdown} onClick={() => toggleDropdown(5)}>
               Intrepretaion Services French &lt;&gt; English
               <div className={`${styles.dropdownContent} ${openDropdown === 5 ? styles.show : ''}`}>
-                <p>We provide professional interpretaion services for your business needs.</p>
+                <p>We provide professional interpretation services for your business needs.</p>
                 <ul>
                   <li>Real-time language support for meetings, webinars, training sessions</li>
                   <li>Focus on EdTech, startup mentorship, or business development topics</li>
                   <li>Available via video call or integrated into virtual learning environments</li>
                 </ul>
-                Let's make your content accessible to a wider audience
+                Make your content accessible to a wider audience
               </div>
             </li>
         </ul>
